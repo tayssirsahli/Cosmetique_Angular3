@@ -1,0 +1,34 @@
+<html>
+    <div class="container">
+        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+            <label>Classification </label>
+            <select class="form-control form-control-lg" id="idClas" name="idClas" [(ngModel)]="IdClassification"
+                (change)="onChange()">
+                <option *ngFor="let clas of classifications" value="{{clas.idClas}}">
+                    {{clas.nomClas}}
+                </option>
+            </select>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <table  class="table table-striped">
+                    
+                    <thead>
+                        <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Date Création</th><th>Classification</th> </tr>
+                    </thead>
+                    <tbody *ngFor= "let element of cosmetiques">
+                        <tr >
+                            <td>{{element.idCosmetique}}</td>
+                            <td>{{element.nomCosmetique}}</td>
+                            <td>{{element.prixCosmetique}}</td>
+                            <td>{{element.dateCreation | date:'dd/MM/yyyy'}}</td>
+                            <td>{{element.classification.nomClas}}</td>
+                           <!--  <td><a *ngIf= "authService.isAdmin()"class="btn btn-danger" (click)="supprimerArticle_cosmetique(element)">Supprimer</a></td>
+                            <td><a *ngIf= "authService.isAdmin()" class="btn btn-success" [routerLink]="['/update-article-cosmetique',element.idarticle]">Modifier</a></td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</html>

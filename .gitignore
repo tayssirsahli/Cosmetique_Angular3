@@ -1,0 +1,48 @@
+# Node.js dependencies
+node_modules/
+
+# Build outputs
+dist/
+out-tsc/
+
+# Environment files
+src/environments/environment*.ts
+
+# Angular cache files
+.angular/
+
+# Logs and debugging files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+
+# Test coverage
+coverage/
+
+# NPM packages
+package-lock.json
+yarn.lock
+
+# Generated files
+*.bak
+*.log
+*.gz
+*.zip
+*.bak
+
+# Angular CLI specific
+.angular/cache/

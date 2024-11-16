@@ -1,0 +1,39 @@
+<html>
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Prix</th>
+                        <th>Date Création</th>
+                        <th>Classification</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let element of cosmetiques">
+                    <tr>
+                        <td>{{ element.idCosmetique }}</td>
+                        <td>{{ element.nomCosmetique }}</td>
+                        <td>{{ element.prixCosmetique }}</td>
+                        <td>{{ element.dateCreation | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ element.classification.nomClas }}</td>
+                        <td><img class="card-img-top img-responsive"
+                                src="{{apiurl+'/image/loadfromFS/'+element.idCosmetique}}"
+                                style="height :50px;width:100px">
+                        </td>
+                        <!-- *ngIf="authService.isAdmin()" -->
+                        <td><a class="btn btn-danger" (click)="supprimerCosmetique(element)">Supprimer</a></td>
+                        <td><a class="btn btn-success"
+                                [routerLink]="['/update-cosmetique', element.idCosmetique]">Modifier</a></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</html>
